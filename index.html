@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DPM Brand | Modern Business Group</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        forest: {
+                            900: '#061C18',
+                            800: '#092621',
+                            700: '#0D352E',
+                            600: '#134D43',
+                            500: '#1A6B5C'
+                        },
+                        lime: {
+                            DEFAULT: '#A3E635',
+                            500: '#84CC16',
+                            600: '#65A30D'
+                        },
+                        cream: {
+                            DEFAULT: '#F7F7F2',
+                            100: '#FFFFFF',
+                            200: '#EFEFEA',
+                            300: '#DFDFD6'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .glass-badge {
+            background: rgba(13, 53, 46, 0.75);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(163, 230, 53, 0.2);
+        }
+        /* Moving Geometric Lines Background Animation */
+        .geometric-bg {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.15;
+        }
+        .geo-line {
+            position: absolute;
+            background: linear-gradient(90deg, transparent, #A3E635, transparent);
+            height: 1px;
+            width: 200%;
+            animation: moveLine 12s linear infinite;
+        }
+        .geo-line:nth-child(1) { top: 15%; animation-duration: 15s; left: -50%; }
+        .geo-line:nth-child(2) { top: 35%; animation-duration: 10s; left: -30%; }
+        .geo-line:nth-child(3) { top: 65%; animation-duration: 18s; left: -60%; }
+        .geo-line:nth-child(4) { top: 85%; animation-duration: 12s; left: -20%; }
+
+        @keyframes moveLine {
+            0% { transform: translateX(0) rotate(15deg); }
+            100% { transform: translateX(50%) rotate(15deg); }
+        }
+
+        /* Carousel manual scroll container */
+        .carousel-container {
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scrollbar-width: none; /* Firefox */
+        }
+        .carousel-container::-webkit-scrollbar {
+            display: none; /* Chrome/Safari */
+        }
+    </style>
+</head>
+<body class="bg-cream text-forest-900 font-sans antialiased selection:bg-lime selection:text-forest-900 relative">
+
+    <!-- Moving Geometric Lines Background Overlay -->
+    <div class="geometric-bg">
+        <div class="geo-line"></div>
+        <div class="geo-line"></div>
+        <div class="geo-line"></div>
+        <div class="geo-line"></div>
+    </div>
+
+    <!-- Top Utility Bar -->
+    <div class="bg-forest-900 text-cream-200 text-xs py-2.5 px-4 sm:px-8 border-b border-forest-800 relative z-10">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-6">
+                <span class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-lime"></i> Donkorkrom, Kwahu Afram Plains North, Ghana</span>
+                <span class="hidden md:inline-flex items-center gap-2"><i class="fa-solid fa-envelope text-lime"></i> info@dpmbrand.com</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="flex items-center gap-3">
+                    <a href="#" class="hover:text-lime transition"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-lime transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-lime transition"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="hover:text-lime transition"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Navigation -->
+    <header class="sticky top-0 z-50 bg-cream/95 backdrop-blur-md border-b border-cream-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 h-28 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 py-2">
+                <img src="images/logo-black" alt="DPM Brand Logo" class="h-20 sm:h-24 w-auto object-contain" onerror="this.src='images/logo-black.png'; if(this.src) this.onerror=function(){this.src='images/logo-black.jpg';}">
+            </a>
+
+            <!-- Desktop Nav Links (Reordered: Our Operations, Ecosystem, Contact, About Us) -->
+            <nav class="hidden lg:flex items-center gap-8 font-medium text-sm text-forest-800">
+                <a href="#ecosystem" class="hover:text-forest-500 transition">Our Operations</a>
+                <a href="#divisions" class="hover:text-forest-500 transition">Ecosystem</a>
+                <a href="#contact" class="hover:text-forest-500 transition">Contact</a>
+                <a href="#about" class="hover:text-forest-500 transition">About Us</a>
+            </nav>
+
+            <!-- Action Button -->
+            <div class="hidden sm:flex items-center gap-4">
+                <a href="#divisions" class="bg-forest-700 hover:bg-forest-800 text-cream px-5 py-2.5 rounded-xl font-semibold text-sm transition shadow-sm flex items-center gap-2">
+                    <span>Explore Our Ecosystem</span>
+                    <i class="fa-solid fa-arrow-right text-lime text-xs"></i>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="menu-btn" class="lg:hidden text-forest-900 text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-cream border-b border-cream-300 px-6 py-6 space-y-4 shadow-xl">
+            <a href="#ecosystem" class="block text-lg font-medium text-forest-900">Our Operations</a>
+            <a href="#divisions" class="block text-lg font-medium text-forest-900">Ecosystem</a>
+            <a href="#contact" class="block text-lg font-medium text-forest-900">Contact</a>
+            <a href="#about" class="block text-lg font-medium text-forest-900">About Us</a>
+            <div class="pt-4 border-t border-cream-300">
+                <a href="#divisions" class="w-full bg-forest-700 text-cream text-center py-3 rounded-xl font-semibold block">Explore Our Ecosystem</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-12 pb-20 lg:pt-20 lg:pb-28 overflow-hidden bg-cream z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                <!-- Hero Content (Left) -->
+                <div class="lg:col-span-6 space-y-8">
+                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-forest-900 tracking-tight leading-[1.05]">
+                        ONE BRAND. <br>
+                        <span class="text-forest-600 underline decoration-lime decoration-4 underline-offset-8">ENDLESS</span> SOLUTIONS.
+                    </h1>
+                    <p class="text-lg sm:text-xl text-forest-800/80 max-w-2xl font-normal leading-relaxed">
+                        DPM Brand is a modern, dynamic business group unifying elite creative media, high-speed rural connectivity, signature public events, logistics, premium essentials, professional rentals, global imports, and advanced technology.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+                        <a href="#divisions" class="bg-forest-700 hover:bg-forest-800 text-cream px-8 py-4 rounded-xl font-bold text-base transition text-center shadow-lg flex items-center justify-center gap-3">
+                            <span>Explore Our Ecosystem</span>
+                            <i class="fa-solid fa-arrow-right-long text-lime"></i>
+                        </a>
+                        <a href="#contact" class="bg-cream-200 hover:bg-cream-300 text-forest-900 border border-cream-300 px-8 py-4 rounded-xl font-bold text-base transition text-center flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-phone text-forest-600"></i>
+                            <span>Get in Touch</span>
+                        </a>
+                    </div>
+                    <div class="grid grid-cols-3 gap-6 pt-8 border-t border-cream-300">
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-black text-forest-900">9+</div>
+                            <div class="text-xs sm:text-sm text-forest-700 font-medium">Specialized Divisions</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-black text-forest-900">100%</div>
+                            <div class="text-xs sm:text-sm text-forest-700 font-medium">Integrated Quality</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-black text-forest-900">24/7</div>
+                            <div class="text-xs sm:text-sm text-forest-700 font-medium">Operational Support</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Image (Right Hand Side) -->
+                <div class="lg:col-span-6">
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-forest-700/10 rounded-3xl transform rotate-2"></div>
+                        <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-cream-100 aspect-[4/5] w-full">
+                            <img src="images/hero-banner" alt="DPM Brand Operations" class="w-full h-full object-cover object-center transform hover:scale-105 transition duration-700" onerror="this.src='images/hero-banner.jpg'; if(this.src) this.onerror=function(){this.src='https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1000'};">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Company Section (Image on Left, Text on Right) -->
+    <section id="about" class="py-20 bg-cream-200 border-y border-cream-300 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Image on Left -->
+                <div class="lg:col-span-6 flex justify-center">
+                    <div class="relative w-full max-w-lg">
+                        <div class="absolute -inset-4 bg-forest-700/10 rounded-3xl transform -rotate-2"></div>
+                        <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-cream-100 transform rotate-1 aspect-[4/3]">
+                            <img src="images/image4" alt="DPM Brand Operations" class="w-full h-full object-cover transform hover:scale-105 transition duration-700" onerror="this.src='images/image4.jpg'; if(this.src) this.onerror=function(){this.src='https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=900'};">
+                        </div>
+                    </div>
+                </div>
+                <!-- Text on Right -->
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="inline-flex items-center gap-2 bg-forest-700 text-cream px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+                        Who We Are
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-forest-900 tracking-tight leading-tight">
+                        Built on Excellence, Diversified for Impact.
+                    </h2>
+                    <p class="text-forest-800/80 leading-relaxed text-base sm:text-lg">
+                        DPM Brand started with a passion for professional multimedia and has since expanded into a multi-industry powerhouse. We combine technical rigor, creative innovation, and reliable logistics to deliver exceptional value across Ghana and beyond.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                        <div class="bg-cream-100 p-5 rounded-2xl border border-cream-300 shadow-sm">
+                            <div class="w-10 h-10 rounded-xl bg-forest-700 text-lime flex items-center justify-center font-bold mb-3">
+                                <i class="fa-solid fa-bullseye"></i>
+                            </div>
+                            <h3 class="font-bold text-forest-900 text-lg mb-1">Our Mission</h3>
+                            <p class="text-sm text-forest-700">To provide world-class, seamless multi-sector solutions that empower individuals and elevate businesses.</p>
+                        </div>
+                        <div class="bg-cream-100 p-5 rounded-2xl border border-cream-300 shadow-sm">
+                            <div class="w-10 h-10 rounded-xl bg-forest-700 text-lime flex items-center justify-center font-bold mb-3">
+                                <i class="fa-solid fa-eye"></i>
+                            </div>
+                            <h3 class="font-bold text-forest-900 text-lg mb-1">Our Vision</h3>
+                            <p class="text-sm text-forest-700">To be Africa's most trusted and diversified brand ecosystem driving digital and commercial growth.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divisions / Subdomains Section (9 Divisions - 3 per row) -->
+    <section id="divisions" class="py-24 bg-cream relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="text-3xl sm:text-5xl font-black text-forest-900 tracking-tight">
+                    Explore Our Ecosystem
+                </h2>
+                <p class="text-forest-800/80 text-lg">
+                    Click any division below to instantly navigate to its dedicated subdomain ecosystem.
+                </p>
+            </div>
+
+            <!-- 9 Division Cards Grid (3 per row) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- 1. Studio -->
+                <a href="https://studio.dpmbrand.com" target="_blank" class="group relative bg-cream-100 rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition duration-300 border border-cream-300 flex flex-col">
+                    <div class="relative w-full h-72 overflow-hidden">
+                        <img src="images/studio" alt="DPM Studio" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='images/studio.jpg'; if(this.src) this.onerror=function(){this.src='https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&q=80&w=800'};">
+                        <div class="absolute inset-0 bg-gradient-to-t from-forest-900/80 via-transparent to-transparent"></div>
+                    </div>
+                    <div class="absolute top-4 right-4 z-10">
+                        <span class="glass-badge text-lime px-3.5 py-1.5 rounded-full text-xs font-light italic tracking-wide shadow-md">
+                            studio.dpmbrand.com
+                        </span>
+                    </div>
+                    <div class="relative z-10 p-6 flex justify-between items-center bg-forest-900 text-cream">
+                        <span class="text-xl font-bold tracking-tight">DPM Studio</span>
+                        <div class="w-10 h-10 rounded-full bg-lime text-forest-900 flex items-center justify-center font-bold group-hover:translate-x-1 transition">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 2. WiFi -->
+                <a href="https://wifi.dpmbrand.com" target="_blank" class="group relative bg-cream-100 rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition duration-300 border border-cream-300 flex flex-col">
+                    <div class="relative w-full h-72 overflow-hidden">
+                        <img src="images/wifi" alt="DPM WiFi" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='images/wifi.jpg'; if(this.src) this.onerror=function(){this.src='https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=800'};">
+                        <div class="absolute inset-0 bg-gradient-to-t from-forest-900/80 via-transparent to-transparent"></div>
+                    </div>
+                    <div class="absolute top-4 right-4 z-10">
+                        <span class="glass-badge text-lime px-3.5 py-1.5 rounded-full text-xs font-light italic tracking-wide shadow-md">
+                            wifi.dpmbrand.com
+                        </span>
+                    </div>
+                    <div class="relative z-10 p-6 flex justify-between items-center bg-forest-900 text-cream">
+                        <span class="text-xl font-bold tracking-tight">DPM WiFi</span>
+                        <div class="w-10 h-10 rounded-full bg-lime text-forest-900 flex items-center justify-center font-bold group-hover:translate-x-1 transition">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 3. Events -->
+                <a href="https://events.dpmbrand.com" target="_blank" class="group relative bg-cream-100 rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition duration-300 border border-cream-300 flex flex-col">
+                    <div class="relative w-full h-72 overflow-hidden">
+                        <img src="images/events" alt="DPM Events" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='images/events.jpg'; if(this.src) this.onerror=function(){this.src='https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&q=80&w=800'};">
+                        <div class="absolute inset-0 bg-gradient-to-t from-forest-900/80 via-transparent to-transparent"></div>
+                    </div>
+                    <div class="absolute top-4 right-4 z-10">
+                        <span class="glass-badge text-lime px-3.5 py-1.5 rounded-full text-xs font-light italic tracking-wide shadow-md">
+                            events.dpmbrand.com
+                        </span>
+                    </div>
+                    <div class="relative z-10 p-6 flex justify-between items-center bg-forest-900 text-cream">
+                        <span class="text-xl font-bold tracking-tight">DPM Events</span>
+                        <div class="w-10 h-10 rounded-full bg-lime text-forest-900 flex items-center justify-center font-bold group-hover:translate-x-1 transition">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 4. Delivery -->
+                <a href="https://delivery.dpmbrand.com" target="_blank" class="group relative bg-cream-100 rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition duration-300 border border-cream-300 flex flex-col">
+                    <div class="relative w-full h-72 overflow-hidden">
+                        <img src="images/delivery" alt="DPM Delivery" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='images/delivery.jpg'; if(this.src) this.onerror=function(){this.src='https://images.unsplash.com/photo-1526367460882-16d1241af130?auto=format&fit=crop&q=80&w=800'};">
+                        <div class="absolute inset-0 bg-gradient-to-t from-forest-900/80 via-transparent to-transparent"></div>
+                    </div>
+                    <div class="absolute top-4 right-4 z-10">
+                        <span class="glass-badge text-lime px-3.5 py-1.5 rounded-full text-xs font-light italic tracking-wide shadow-md">
+                            delivery.dpmbrand.com
+                        </span>
+                    </div>
+                    <div class="relative z-10 p-6 flex justify-between items-center bg-forest-900 text-cream">
+                        <span class="text-xl font-bold tracking-tight">DPM Delivery</span>
+                        <div class="w-10 h-10 rounded-full bg-lime text-forest-900 flex items-center justify-center font-bold group-hover:translate-x-1 transition">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 5. Tech -->
+                <a href="https://tech.dpmbrand.com" target="_blank" class="group relative bg-cream-100 rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition duration-300 border border-cream-300 flex flex-col">
+                    <div class="relative w-full h-72 overflow-hidden">
+                        <img src="images/tech" alt="DPM Tech" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='images/tech.jpg'; if(this.src) this.onerror=function(){this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800'};">
+                        <div class="absolute inset-0 bg-gradient-to-t from-forest-900/80 via-transparent to-transparent"></div>
+                    </div>
+                    <div class="absolute top-4 right-4 z-10">
+                        <span class="glass-badge text-lime px-3.5 py-1.5 rounded-full text-xs font-light italic tracking-wide shadow-md">
+                            tech.dpmbrand.com
+                        </span>
+                    </div>
+                    <div class="relative z-10 p-6 flex justify-between items-center bg-forest-900 text-cream">
+                        <span class="text-xl font-bold tracking-tight">DPM Tech</span>
+                        <div class="w-10 h-10 rounded-full bg-lime text-forest-900 flex items-center justify-center font-bold group-hover:translate-x-1 transition">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 6. SMS -->
+                <a href="https://sms.dpmbrand.com" target="_blank" class="group relative bg-cream-100 rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition duration-300 border border-cream-300 flex flex-col">
+                    <div class="relative w-full h-72 overflow-hidden">
+                        <img src="images/sms" alt="DPM SMS" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='images/sms.jpg'; if(this.src) this.onerror=function(){this.src='https://images.unsplash.com/photo-1577563908411-5077b6dc7624?auto=format&fit=crop&q=80&w=800'};">
+                        <div class="absolute inset-0 bg-gradient-to-t from-forest-900/80 via-transparent to-transparent"></div>
+                    </div>
+                    <div class="absolute top-4 right-4 z-10">
+                        <span class="glass-badge text-lime px-3.5 py-1.5 rounded-full text-xs font-light italic tracking-wide shadow-md">
+                            sms.dpmbrand.com
+                        </span>
+                    </div>
+                    <div class="relative z-10 p-6 flex justify-between items-center bg-forest-900 text-cream">
+                        <span class="text-xl font-bold tracking-tight">DPM SMS</span>
+                        <div class="w-10 h-10 rounded-full bg-lime text-forest-900 flex items-center justify-center font-bold group-hover:translate-x-1 transition">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 7. Rentals -->
+                <div class="group relative bg-cream-100 rounded-3xl overflow-hidden shadow-sm border border-cream-300 flex flex-col opacity-60 grayscale pointer-events-none">
+                    <div class="relative w-full h-72 overflow-hidden">
+                        <img src="images/rentals" alt="DPM Rentals" class="w-full h-full object-cover" onerror="this.src='images/rentals.jpg'; if(this.src) this.onerror=function(){this.src='https://images.unsplash.com/photo-1508873696983-2df5c920ac1c?auto=format&fit=crop&q=80&w=800'};">
+                        <div class="absolute inset-0 bg-gradient-to-t from-forest-900/80 via-transparent to-transparent"></div>
+                    </div>
+                    <div class="absolute top-4 right-4 z-10">
+                        <span class="bg-forest-900 text-cream-300 px-3.5 py-1.5 rounded-full text-xs font-light italic tracking-wide shadow-md border border-forest-700">
+                            Coming Soon
+                        </span>
+                    </div>
+                    <div class="relative z-10 p-6 flex justify-between items-center bg-forest-900 text-cream">
+                        <span class="text-xl font-bold tracking-tight">DPM Rentals</span>
+                        <div class="w-10 h-10 rounded-full bg-cream-300 text-forest-900 flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-lock text-xs"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8. Imports -->
+                <div class="group relative bg-cream-100 rounded-3xl overflow-hidden shadow-sm border border-cream-300 flex flex-col opacity-60 grayscale pointer-events-none">
+                    <div class="relative w-full h-72 overflow-hidden">
+                        <img src="images/imports" alt="DPM Imports" class="w-full h-full object-cover" onerror="this.src='images/imports.jpg'; if(this.src) this.onerror=function(){this.src='https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800'};">
+                        <div class="absolute inset-0 bg-gradient-to-t from-forest-900/80 via-transparent to-transparent"></div>
+                    </div>
+                    <div class="absolute top-4 right-4 z-10">
+                        <span class="bg-forest-900 text-cream-300 px-3.5 py-1.5 rounded-full text-xs font-light italic tracking-wide shadow-md border border-forest-700">
+                            Coming Soon
+                        </span>
+                    </div>
+                    <div class="relative z-10 p-6 flex justify-between items-center bg-forest-900 text-cream">
+                        <span class="text-xl font-bold tracking-tight">DPM Imports</span>
+                        <div class="w-10 h-10 rounded-full bg-cream-300 text-forest-900 flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-lock text-xs"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 9. Essentials -->
+                <div class="group relative bg-cream-100 rounded-3xl overflow-hidden shadow-sm border border-cream-300 flex flex-col opacity-60 grayscale pointer-events-none">
+                    <div class="relative w-full h-72 overflow-hidden">
+                        <img src="images/essentials" alt="DPM Essentials" class="w-full h-full object-cover" onerror="this.src='images/essentials.jpg'; if(this.src) this.onerror=function(){this.src='https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&q=80&w=800'};">
+                        <div class="absolute inset-0 bg-gradient-to-t from-forest-900/80 via-transparent to-transparent"></div>
+                    </div>
+                    <div class="absolute top-4 right-4 z-10">
+                        <span class="bg-forest-900 text-cream-300 px-3.5 py-1.5 rounded-full text-xs font-light italic tracking-wide shadow-md border border-forest-700">
+                            Coming Soon
+                        </span>
+                    </div>
+                    <div class="relative z-10 p-6 flex justify-between items-center bg-forest-900 text-cream">
+                        <span class="text-xl font-bold tracking-tight">DPM Essentials</span>
+                        <div class="w-10 h-10 rounded-full bg-cream-300 text-forest-900 flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-lock text-xs"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Ecosystem Advantage Section -->
+    <section id="ecosystem" class="py-20 bg-forest-900 text-cream relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-lime text-xs font-bold uppercase tracking-widest block">Unified Operations</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
+                        Why Clients Choose the DPM Ecosystem
+                    </h2>
+                    <p class="text-cream-200 leading-relaxed">
+                        By integrating multiple services under one umbrella, we eliminate the friction of dealing with multiple vendors. Whether you are launching an event, deploying high-speed internet, sourcing commercial imports, or building custom software, DPM Brand delivers cohesive, enterprise-grade excellence.
+                    </p>
+                    <ul class="space-y-3 text-sm text-cream-200">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-lime"></i> Centralized management and billing across all divisions</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-lime"></i> Dedicated local support teams stationed across Ghana</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-lime"></i> Scalable infrastructure designed for modern businesses</li>
+                    </ul>
+                </div>
+
+                <!-- Neumorphic Clean Metrics Card -->
+                <div class="lg:col-span-7 bg-[#092621]/80 backdrop-blur-xl p-6 sm:p-8 rounded-[36px] border border-forest-700/60 shadow-[0_20px_50px_rgba(0,0,0,0.5)] space-y-6 text-forest-900">
+                    
+                    <!-- Top Widget Header -->
+                    <div class="bg-cream p-5 rounded-2xl shadow-sm flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-500 text-white flex items-center justify-center text-xl shadow-md">
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-forest-900 text-base">Live Visitors & Traffic</h4>
+                                <p class="text-xs text-forest-700">Real-time site visitor tracker</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-1.5 bg-forest-900/5 p-1 rounded-xl">
+                            <button type="button" class="px-3 py-1.5 text-xs font-semibold rounded-lg text-forest-700 hover:bg-white transition">7d</button>
+                            <button type="button" class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow">Live</button>
+                            <button type="button" class="px-3 py-1.5 text-xs font-semibold rounded-lg text-forest-700 hover:bg-white transition">30d</button>
+                        </div>
+                    </div>
+
+                    <!-- Main Stats Display -->
+                    <div class="bg-cream p-6 rounded-2xl shadow-sm flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                        <div>
+                            <div id="live-visitor-count" class="text-3xl sm:text-4xl font-black text-forest-900 tracking-tight">1,450</div>
+                            <div class="flex items-center gap-1.5 text-xs font-bold text-emerald-600 mt-1">
+                                <i class="fa-solid fa-signal animate-pulse"></i>
+                                <span id="live-status-text">Live visitors online now</span>
+                            </div>
+                        </div>
+                        <div class="bg-emerald-50 border border-emerald-200 px-4 py-2.5 rounded-2xl flex items-center gap-2">
+                            <div class="w-8 h-8 rounded-xl bg-emerald-500 text-white flex items-center justify-center text-xs">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </div>
+                            <div>
+                                <span id="live-growth-rate" class="text-xs font-bold text-emerald-700 block">+12.5%</span>
+                                <span class="text-[10px] text-forest-700 font-medium">Active traffic rate</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Simulated Wave Graph Box -->
+                    <div class="bg-cream p-5 rounded-2xl shadow-sm relative overflow-hidden">
+                        <div class="flex justify-between items-center mb-3 text-xs font-semibold text-forest-700">
+                            <span>Start</span>
+                            <span>Mid-Cycle</span>
+                            <span id="graph-peak-label" class="text-blue-600 font-bold bg-blue-50 px-2.5 py-1 rounded-lg border border-blue-200">Current: 1,450</span>
+                        </div>
+                        <!-- SVG Gradient Wave Graphic -->
+                        <div class="w-full h-28 relative">
+                            <svg viewBox="0 0 500 120" class="w-full h-full overflow-visible">
+                                <defs>
+                                    <linearGradient id="grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.4"/>
+                                        <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.0"/>
+                                    </linearGradient>
+                                </defs>
+                                <path d="M0,90 Q60,40 120,70 T240,50 T360,30 T480,15 L480,120 L0,120 Z" fill="url(#grad)" />
+                                <path d="M0,90 Q60,40 120,70 T240,50 T360,30 T480,15" fill="none" stroke="#3b82f6" stroke-width="3.5" stroke-linecap="round"/>
+                                <!-- Highlight Node -->
+                                <circle cx="360" cy="30" r="5" fill="#ffffff" stroke="#3b82f6" stroke-width="3"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Dual Bottom Cards -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="bg-cream p-4 rounded-2xl shadow-sm flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-purple-600 text-white flex items-center justify-center text-sm shadow">
+                                    <i class="fa-solid fa-user-plus"></i>
+                                </div>
+                                <div>
+                                    <span class="text-[11px] font-bold text-forest-700 uppercase tracking-wide">New Sessions</span>
+                                    <div id="live-new-sessions" class="text-lg font-black text-forest-900">980</div>
+                                </div>
+                            </div>
+                            <span class="text-xs font-bold text-emerald-600 flex items-center gap-1"><i class="fa-solid fa-arrow-up text-[10px]"></i>14.2%</span>
+                        </div>
+
+                        <div class="bg-cream p-4 rounded-2xl shadow-sm flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-emerald-500 text-white flex items-center justify-center text-sm shadow">
+                                    <i class="fa-solid fa-shield-halved"></i>
+                                </div>
+                                <div>
+                                    <span class="text-[11px] font-bold text-forest-700 uppercase tracking-wide">Retention Rate</span>
+                                    <div class="text-lg font-black text-forest-900">95.2%</div>
+                                </div>
+                            </div>
+                            <span class="text-xs font-bold text-emerald-600 flex items-center gap-1"><i class="fa-solid fa-arrow-up text-[10px]"></i>2.8%</span>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Action Pill -->
+                    <a href="#divisions" class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-3.5 px-6 rounded-2xl transition shadow-lg flex items-center justify-center gap-3 text-sm cursor-pointer">
+                        <span>View Ecosystem Details</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Carousel Section -->
+    <section class="py-16 bg-cream-200 border-b border-cream-300 overflow-hidden relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 mb-8 flex justify-between items-center">
+            <div>
+                <h3 class="text-xl sm:text-2xl font-bold text-forest-900 tracking-tight">Glimpse Into Our Operations</h3>
+                <p class="text-xs sm:text-sm text-forest-700 mt-1">Showcasing moments and assets across our brand network</p>
+            </div>
+        </div>
+
+        <div class="relative w-full px-4 sm:px-8 max-w-7xl mx-auto group">
+            <!-- Left Arrow on Image Level -->
+            <button id="carousel-prev" type="button" class="absolute left-6 sm:left-10 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-forest-900/80 text-lime hover:bg-forest-900 transition flex items-center justify-center shadow-2xl backdrop-blur-md cursor-pointer border border-lime/30">
+                <i class="fa-solid fa-arrow-left text-base"></i>
+            </button>
+
+            <!-- Right Arrow on Image Level -->
+            <button id="carousel-next" type="button" class="absolute right-6 sm:right-10 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-forest-900/80 text-lime hover:bg-forest-900 transition flex items-center justify-center shadow-2xl backdrop-blur-md cursor-pointer border border-lime/30">
+                <i class="fa-solid fa-arrow-right text-base"></i>
+            </button>
+
+            <!-- Carousel Track -->
+            <div id="carousel-track" class="carousel-container py-4">
+                <div class="w-80 sm:w-96 h-64 rounded-2xl overflow-hidden shadow-lg border-2 border-cream-100 shrink-0 transform hover:scale-[1.02] transition duration-300"><img src="images/image1" class="w-full h-full object-cover" onerror="this.src='images/image1.jpg'; if(this.src)this.onerror=function(){this.src='https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800'};"></div>
+                <div class="w-80 sm:w-96 h-64 rounded-2xl overflow-hidden shadow-lg border-2 border-cream-100 shrink-0 transform hover:scale-[1.02] transition duration-300"><img src="images/image2" class="w-full h-full object-cover" onerror="this.src='images/image2.jpg'; if(this.src)this.onerror=function(){this.src='https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=800'};"></div>
+                <div class="w-80 sm:w-96 h-64 rounded-2xl overflow-hidden shadow-lg border-2 border-cream-100 shrink-0 transform hover:scale-[1.02] transition duration-300"><img src="images/image3" class="w-full h-full object-cover" onerror="this.src='images/image3.jpg'; if(this.src)this.onerror=function(){this.src='https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800'};"></div>
+                <div class="w-80 sm:w-96 h-64 rounded-2xl overflow-hidden shadow-lg border-2 border-cream-100 shrink-0 transform hover:scale-[1.02] transition duration-300"><img src="images/image5" class="w-full h-full object-cover" onerror="this.src='images/image5.jpg'; if(this.src)this.onerror=function(){this.src='https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=800'};"></div>
+                <div class="w-80 sm:w-96 h-64 rounded-2xl overflow-hidden shadow-lg border-2 border-cream-100 shrink-0 transform hover:scale-[1.02] transition duration-300"><img src="images/image6" class="w-full h-full object-cover" onerror="this.src='images/image6.jpg'; if(this.src)this.onerror=function(){this.src='https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&q=80&w=800'};"></div>
+                <div class="w-80 sm:w-96 h-64 rounded-2xl overflow-hidden shadow-lg border-2 border-cream-100 shrink-0 transform hover:scale-[1.02] transition duration-300"><img src="images/image7" class="w-full h-full object-cover" onerror="this.src='images/image7.jpg'; if(this.src)this.onerror=function(){this.src='https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=800'};"></div>
+                <div class="w-80 sm:w-96 h-64 rounded-2xl overflow-hidden shadow-lg border-2 border-cream-100 shrink-0 transform hover:scale-[1.02] transition duration-300"><img src="images/image8" class="w-full h-full object-cover" onerror="this.src='images/image8.jpg'; if(this.src)this.onerror=function(){this.src='https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&q=80&w=800'};"></div>
+                <div class="w-80 sm:w-96 h-64 rounded-2xl overflow-hidden shadow-lg border-2 border-cream-100 shrink-0 transform hover:scale-[1.02] transition duration-300"><img src="images/image9" class="w-full h-full object-cover" onerror="this.src='images/image9.jpg'; if(this.src)this.onerror=function(){this.src='https://images.unsplash.com/photo-1526367460882-16d1241af130?auto=format&fit=crop&q=80&w=800'};"></div>
+                <div class="w-80 sm:w-96 h-64 rounded-2xl overflow-hidden shadow-lg border-2 border-cream-100 shrink-0 transform hover:scale-[1.02] transition duration-300"><img src="images/image10" class="w-full h-full object-cover" onerror="this.src='images/image10.jpg'; if(this.src)this.onerror=function(){this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800'};"></div>
+                <div class="w-80 sm:w-96 h-64 rounded-2xl overflow-hidden shadow-lg border-2 border-cream-100 shrink-0 transform hover:scale-[1.02] transition duration-300"><img src="images/image11" class="w-full h-full object-cover" onerror="this.src='images/image11.jpg'; if(this.src)this.onerror=function(){this.src='https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&q=80&w=800'};"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-cream relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="inline-flex items-center gap-2 bg-forest-700 text-cream px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+                        Get In Touch
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-black text-forest-900 tracking-tight">
+                        Connect with Us:
+                    </h2>
+                    <p class="text-forest-800/80 leading-relaxed">
+                        Have questions about our services or want to partner with one of our specialized divisions? Reach out to our central team today.
+                    </p>
+                    <div class="space-y-4 pt-4">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-forest-700 text-lime flex items-center justify-center text-lg font-bold shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-forest-900 text-base">Headquarters</h4>
+                                <p class="text-sm text-forest-700">Donkorkrom, Kwahu Afram Plains North, Eastern Region, Ghana</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-forest-700 text-lime flex items-center justify-center text-lg font-bold shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-forest-900 text-base">Email Support</h4>
+                                <p class="text-sm text-forest-700">info@dpmbrand.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-forest-700 text-lime flex items-center justify-center text-lg font-bold shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-forest-900 text-base">Working Hours:</h4>
+                                <p class="text-sm text-forest-700">Mon - Sat: 8:00 AM - 6:00 PM</p>
+                                <p class="text-sm font-semibold text-forest-900 mt-1">Phone: 0554436269 / 0204977313</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 bg-cream-200 p-8 sm:p-10 rounded-3xl border border-cream-300 shadow-xl">
+                    <form action="#" method="POST" class="space-y-6">
+                        <h3 class="text-2xl font-bold text-forest-900 mb-2">Send Us a Message</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-bold text-forest-800 uppercase mb-2">Your Name</label>
+                                <input type="text" required class="w-full bg-cream-100 border border-cream-300 rounded-xl px-4 py-3.5 text-forest-900 focus:outline-none focus:border-forest-700" placeholder="Kwame Mensah">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-forest-800 uppercase mb-2">Email Address</label>
+                                <input type="email" required class="w-full bg-cream-100 border border-cream-300 rounded-xl px-4 py-3.5 text-forest-900 focus:outline-none focus:border-forest-700" placeholder="kwame@example.com">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-forest-800 uppercase mb-2">Select Division / Subdomain</label>
+                            <select class="w-full bg-cream-100 border border-cream-300 rounded-xl px-4 py-3.5 text-forest-900 focus:outline-none focus:border-forest-700">
+                                <option>General Corporate Inquiry</option>
+                                <option>DPM Studio (studio.dpmbrand.com)</option>
+                                <option>DPM WiFi (wifi.dpmbrand.com)</option>
+                                <option>DPM Events (events.dpmbrand.com)</option>
+                                <option>DPM Delivery (delivery.dpmbrand.com)</option>
+                                <option>DPM Tech (tech.dpmbrand.com)</option>
+                                <option>DPM SMS (sms.dpmbrand.com)</option>
+                                <option>DPM Essentials (Coming Soon)</option>
+                                <option>DPM Rentals (Coming Soon)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-forest-800 uppercase mb-2">Your Message</label>
+                            <textarea rows="4" class="w-full bg-cream-100 border border-cream-300 rounded-xl px-4 py-3.5 text-forest-900 focus:outline-none focus:border-forest-700" placeholder="How can we help you today?"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-forest-700 hover:bg-forest-800 text-cream font-bold py-4 rounded-xl transition shadow-lg flex items-center justify-center gap-2 cursor-pointer">
+                            <span>Send Inquiry</span>
+                            <i class="fa-solid fa-paper-plane text-lime"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-forest-900 text-cream py-16 border-t border-forest-800 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+                <div class="lg:col-span-2 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <img src="images/logo-white" alt="DPM Brand Logo" class="h-14 w-auto object-contain" onerror="this.src='images/logo-white.png'; if(this.src) this.onerror=function(){this.src='images/logo-white.jpg';}">
+                    </div>
+                    <p class="text-cream-200 text-sm max-w-sm leading-relaxed">
+                        A modern business group offering multiple specialized services under one unified brand. Operating across Ghana with excellence and innovation.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lime text-sm uppercase tracking-wider mb-4">Active Divisions</h4>
+                    <ul class="space-y-2.5 text-sm text-cream-200">
+                        <li><a href="https://studio.dpmbrand.com" target="_blank" class="hover:text-lime transition">DPM Studio</a></li>
+                        <li><a href="https://wifi.dpmbrand.com" target="_blank" class="hover:text-lime transition">DPM WiFi</a></li>
+                        <li><a href="https://events.dpmbrand.com" target="_blank" class="hover:text-lime transition">DPM Events</a></li>
+                        <li><a href="https://delivery.dpmbrand.com" target="_blank" class="hover:text-lime transition">DPM Delivery</a></li>
+                        <li><a href="https://tech.dpmbrand.com" target="_blank" class="hover:text-lime transition">DPM Tech</a></li>
+                        <li><a href="https://sms.dpmbrand.com" target="_blank" class="hover:text-lime transition">DPM SMS</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lime text-sm uppercase tracking-wider mb-4">Coming Soon</h4>
+                    <ul class="space-y-2.5 text-sm text-cream-200 opacity-70">
+                        <li><span>DPM Essentials</span></li>
+                        <li><span>DPM Rentals</span></li>
+                        <li><span>DPM Imports</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lime text-sm uppercase tracking-wider mb-4">Quick Links</h4>
+                    <ul class="space-y-2.5 text-sm text-cream-200">
+                        <li><a href="#ecosystem" class="hover:text-lime transition">Our Operations</a></li>
+                        <li><a href="#divisions" class="hover:text-lime transition">Ecosystem</a></li>
+                        <li><a href="#contact" class="hover:text-lime transition">Contact Headquarters</a></li>
+                        <li><a href="#about" class="hover:text-lime transition">About Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-forest-800 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-cream-200">
+                <p>&copy; 2026 DPM Tech. All rights reserved.</p>
+                <div class="flex items-center gap-6">
+                    <button type="button" id="open-privacy" class="hover:text-lime transition cursor-pointer bg-transparent border-none p-0 text-xs text-cream-200">Privacy Policy</button>
+                    <button type="button" id="open-terms" class="hover:text-lime transition cursor-pointer bg-transparent border-none p-0 text-xs text-cream-200">Terms of Service</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacy-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-forest-900/80 backdrop-blur-sm hidden">
+        <div class="bg-cream text-forest-900 w-full max-w-3xl max-h-[85vh] rounded-3xl shadow-2xl flex flex-col overflow-hidden border border-cream-300">
+            <div class="p-6 bg-forest-900 text-cream flex justify-between items-center border-b border-forest-800">
+                <h3 class="text-xl font-bold flex items-center gap-2"><i class="fa-solid fa-shield-halved text-lime"></i> Privacy Policy</h3>
+                <button type="button" id="close-privacy" class="w-9 h-9 rounded-full bg-forest-800 text-cream hover:bg-forest-700 flex items-center justify-center cursor-pointer transition">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="p-6 sm:p-8 overflow-y-auto space-y-6 text-sm text-forest-800/90 leading-relaxed">
+                <p><strong>Effective Date:</strong> November 12, 2026</p>
+                <p>DPM Brand ("we", "our", or "us"), headquartered in Donkorkrom, Kwahu Afram Plains North, Ghana, operates the digital portal <strong>dpmbrand.com</strong> and its specialized subdomain ecosystem (including studio, wifi, events, delivery, tech, and sms). We respect your privacy and are committed to safeguarding any information you share with us in compliance with the Data Protection Act, 2012 of Ghana.</p>
+                
+                <h4 class="font-bold text-base text-forest-900 pt-2">1. Information We Collect</h4>
+                <p>Because dpmbrand.com operates as an informational gateway and corporate hub where user registration or sign-up accounts are not required, we collect minimal information:</p>
+                <ul class="list-disc pl-5 space-y-1">
+                    <li><strong>Direct Inquiries:</strong> When you voluntarily submit a message through our contact forms, we collect your name, email address, selected division, and message contents.</li>
+                    <li><strong>Automated & Traffic Metrics:</strong> We record anonymous browser metrics, real-time visitor counts, and session stats to analyze site performance and traffic flow.</li>
+                </ul>
+
+                <h4 class="font-bold text-base text-forest-900 pt-2">2. How We Use Your Information</h4>
+                <p>Any data collected is used solely for the following purposes:</p>
+                <ul class="list-disc pl-5 space-y-1">
+                    <li>Responding directly to your service requests, bookings, or inquiries regarding our divisions.</li>
+                    <li>Improving site reliability, network infrastructure performance, and user experience.</li>
+                    <li>Fulfilling legal and regulatory obligations under Ghanaian jurisdiction.</li>
+                </ul>
+
+                <h4 class="font-bold text-base text-forest-900 pt-2">3. Data Sharing & Security</h4>
+                <p>We do not sell, trade, or rent your personal data to third parties. Information submitted via contact forms remains strictly confidential between you and DPM Brand management. We implement robust administrative and technical security measures to protect your inquiries.</p>
+
+                <h4 class="font-bold text-base text-forest-900 pt-2">4. Contact Us</h4>
+                <p>If you have any questions or concerns regarding this Privacy Policy, please reach out to us at <strong>info@dpmbrand.com</strong> or call us at <strong>0554436269 / 0204977313</strong>.</p>
+            </div>
+            <div class="p-4 bg-cream-200 border-t border-cream-300 flex justify-end">
+                <button type="button" id="close-privacy-btn" class="bg-forest-700 hover:bg-forest-800 text-cream px-6 py-2.5 rounded-xl font-semibold text-sm cursor-pointer transition">Close Policy</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terms of Service Modal -->
+    <div id="terms-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-forest-900/80 backdrop-blur-sm hidden">
+        <div class="bg-cream text-forest-900 w-full max-w-3xl max-h-[85vh] rounded-3xl shadow-2xl flex flex-col overflow-hidden border border-cream-300">
+            <div class="p-6 bg-forest-900 text-cream flex justify-between items-center border-b border-forest-800">
+                <h3 class="text-xl font-bold flex items-center gap-2"><i class="fa-solid fa-file-contract text-lime"></i> Terms of Service</h3>
+                <button type="button" id="close-terms" class="w-9 h-9 rounded-full bg-forest-800 text-cream hover:bg-forest-700 flex items-center justify-center cursor-pointer transition">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="p-6 sm:p-8 overflow-y-auto space-y-6 text-sm text-forest-800/90 leading-relaxed">
+                <p><strong>Effective Date:</strong> November 12, 2026</p>
+                <p>Welcome to <strong>dpmbrand.com</strong>. By accessing or using our website and exploring our unified ecosystem of services (DPM Studio, DPM WiFi, DPM Events, DPM Delivery, DPM Tech, DPM SMS, etc.), you agree to comply with and be bound by the following terms and conditions.</p>
+                
+                <h4 class="font-bold text-base text-forest-900 pt-2">1. Acceptance of Terms</h4>
+                <p>By visiting our website or submitting inquiries, you acknowledge that you have read, understood, and agreed to these Terms of Service. If you do not agree, please refrain from using our digital platforms.</p>
+
+                <h4 class="font-bold text-base text-forest-900 pt-2">2. Nature of Services & No Account Requirement</h4>
+                <p>Our website functions primarily as an informational hub and gateway to our specialized service subdomains. Since user account creation and sign-ups are not required on dpmbrand.com, visitors interact with our brand through direct contact forms, external subdomain links, or direct service engagements.</p>
+
+                <h4 class="font-bold text-base text-forest-900 pt-2">3. Intellectual Property Rights</h4>
+                <p>All content, logos, graphics, brand names, media assets, and source code displayed on dpmbrand.com are the exclusive property of DPM Brand and DPM Tech. Unauthorized reproduction, redistribution, or commercial exploitation of our content without prior written consent is strictly prohibited.</p>
+
+                <h4 class="font-bold text-base text-forest-900 pt-2">4. Limitation of Liability</h4>
+                <p>DPM Brand provides its website and informational content on an "as-is" basis. We make no warranties regarding uninterrupted availability of subdomains and shall not be held liable for any direct, indirect, or incidental damages arising from the use of our website or third-party payment/gateway services.</p>
+
+                <h4 class="font-bold text-base text-forest-900 pt-2">5. Governing Law</h4>
+                <p>These Terms shall be governed by and construed in accordance with the laws of the Republic of Ghana. Any legal disputes arising in connection with these terms shall be subject to the exclusive jurisdiction of the courts of Ghana.</p>
+
+                <h4 class="font-bold text-base text-forest-900 pt-2">6. Modifications</h4>
+                <p>We reserve the right to modify these terms at any time. Changes will be effective immediately upon posting to this website.</p>
+            </div>
+            <div class="p-4 bg-cream-200 border-t border-cream-300 flex justify-end">
+                <button type="button" id="close-terms-btn" class="bg-forest-700 hover:bg-forest-800 text-cream px-6 py-2.5 rounded-xl font-semibold text-sm cursor-pointer transition">Close Terms</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Script
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Carousel Interactive Arrow Scroll & Auto-Scroll Handling (1-by-1 item scroll)
+        const track = document.getElementById('carousel-track');
+        const prevBtn = document.getElementById('carousel-prev');
+        const nextBtn = document.getElementById('carousel-next');
+
+        const scrollAmount = 380; // approximate card width + gap
+
+        prevBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+
+        nextBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+
+        // Auto-scroll carousel when user is not interacting
+        let autoScrollTimer = setInterval(() => {
+            if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 10) {
+                track.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            }
+        }, 4000);
+
+        // Pause auto-scroll on hover or interaction
+        track.addEventListener('mouseenter', () => clearInterval(autoScrollTimer));
+        track.addEventListener('mouseleave', () => {
+            autoScrollTimer = setInterval(() => {
+                if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 10) {
+                    track.scrollTo({ left: 0, behavior: 'smooth' });
+                } else {
+                    track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                }
+            }, 4000);
+        });
+
+        // Live Visitor Counter & Real-Time Tracking Integration
+        document.addEventListener("DOMContentLoaded", () => {
+            const visitorCounterEl = document.getElementById("live-visitor-count");
+            const newSessionsEl = document.getElementById("live-new-sessions");
+            const peakLabelEl = document.getElementById("graph-peak-label");
+
+            let baseVisitors = parseInt(localStorage.getItem("dpm_live_visitors")) || 1450;
+            let baseSessions = parseInt(localStorage.getItem("dpm_live_sessions")) || 980;
+
+            baseVisitors += 1;
+            baseSessions += 1;
+
+            localStorage.setItem("dpm_live_visitors", baseVisitors);
+            localStorage.setItem("dpm_live_sessions", baseSessions);
+
+            visitorCounterEl.textContent = baseVisitors.toLocaleString();
+            newSessionsEl.textContent = baseSessions.toLocaleString();
+            peakLabelEl.textContent = `Current: ${baseVisitors.toLocaleString()}`;
+
+            setInterval(() => {
+                baseVisitors += Math.floor(Math.random() * 3) + 1;
+                localStorage.setItem("dpm_live_visitors", baseVisitors);
+                visitorCounterEl.textContent = baseVisitors.toLocaleString();
+                peakLabelEl.textContent = `Current: ${baseVisitors.toLocaleString()}`;
+            }, 30000);
+        });
+
+        // Modal Logic for Privacy Policy & Terms of Service
+        const privacyModal = document.getElementById('privacy-modal');
+        const termsModal = document.getElementById('terms-modal');
+
+        const openPrivacy = document.getElementById('open-privacy');
+        const closePrivacy = document.getElementById('close-privacy');
+        const closePrivacyBtn = document.getElementById('close-privacy-btn');
+
+        const openTerms = document.getElementById('open-terms');
+        const closeTerms = document.getElementById('close-terms');
+        const closeTermsBtn = document.getElementById('close-terms-btn');
+
+        openPrivacy.addEventListener('click', (e) => {
+            e.preventDefault();
+            privacyModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        });
+
+        const closePrivacyModal = () => {
+            privacyModal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        };
+
+        closePrivacy.addEventListener('click', closePrivacyModal);
+        closePrivacyBtn.addEventListener('click', closePrivacyModal);
+
+        openTerms.addEventListener('click', (e) => {
+            e.preventDefault();
+            termsModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        });
+
+        const closeTermsModal = () => {
+            termsModal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        };
+
+        closeTerms.addEventListener('click', closeTermsModal);
+        closeTermsBtn.addEventListener('click', closeTermsModal);
+
+        // Close modal on background click
+        window.addEventListener('click', (e) => {
+            if (e.target === privacyModal) closePrivacyModal();
+            if (e.target === termsModal) closeTermsModal();
+        });
+    </script>
+</body>
+</html>

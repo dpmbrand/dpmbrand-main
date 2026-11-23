@@ -129,7 +129,7 @@
             <nav class="hidden lg:flex items-center gap-8 font-medium text-sm text-forest-800">
                 <a href="#ecosystem" class="hover:text-forest-500 transition">Our Operations</a>
                 <a href="#divisions" class="hover:text-forest-500 transition">Ecosystem</a>
-                <a href="#calendar-section" class="hover:text-forest-500 transition">Ghana Time & Calendar</a>
+                <a href="#calendar-section" class="hover:text-forest-500 transition">Global Time & Calendar</a>
                 <a href="#contact" class="hover:text-forest-500 transition">Contact</a>
                 <a href="#about" class="hover:text-forest-500 transition">About Us</a>
             </nav>
@@ -152,7 +152,7 @@
         <div id="mobile-menu" class="hidden lg:hidden bg-cream border-b border-cream-300 px-6 py-6 space-y-4 shadow-xl">
             <a href="#ecosystem" class="block text-lg font-medium text-forest-900">Our Operations</a>
             <a href="#divisions" class="block text-lg font-medium text-forest-900">Ecosystem</a>
-            <a href="#calendar-section" class="block text-lg font-medium text-forest-900">Ghana Time & Calendar</a>
+            <a href="#calendar-section" class="block text-lg font-medium text-forest-900">Global Time & Calendar</a>
             <a href="#contact" class="block text-lg font-medium text-forest-900">Contact</a>
             <a href="#about" class="block text-lg font-medium text-forest-900">About Us</a>
             <div class="pt-4 border-t border-cream-300">
@@ -190,8 +190,8 @@
                             <div class="text-xs sm:text-sm text-forest-700 font-medium">Specialized Divisions</div>
                         </div>
                         <div>
-                            <div class="text-2xl sm:text-3xl font-black text-forest-900">100%</div>
-                            <div class="text-xs sm:text-sm text-forest-700 font-medium">Integrated Quality</div>
+                            <div class="text-2xl sm:text-3xl font-black text-forest-900">10+</div>
+                            <div class="text-xs sm:text-sm text-forest-700 font-medium">Years in Operation</div>
                         </div>
                         <div>
                             <div class="text-2xl sm:text-3xl font-black text-forest-900">24/7</div>
@@ -387,7 +387,7 @@
                     </div>
                 </a>
 
-                <!-- 7. iVoteGH (Formerly Rentals - Now Active) -->
+                <!-- 7. iVoteGH -->
                 <a href="https://ivotegh.dpmbrand.com" target="_blank" class="group relative bg-cream-100 rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition duration-300 border border-cream-300 flex flex-col">
                     <div class="relative w-full h-72 overflow-hidden">
                         <img src="images/ivotegh.webp" alt="iVoteGH" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" width="600" height="400" loading="lazy" onerror="this.src='images/ivotegh.jpg'; if(this.src) this.onerror=function(){this.src='https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?auto=format&fit=crop&q=80&w=800'};">
@@ -452,18 +452,18 @@
     <section id="calendar-section" class="py-20 bg-cream-200 border-y border-cream-300 relative z-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-8">
             <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
-                <span class="text-forest-700 text-xs font-extrabold uppercase tracking-widest">Ghana Time & Official Calendar</span>
+                <span class="text-forest-700 text-xs font-extrabold uppercase tracking-widest">Global Time & Official Calendar</span>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-forest-900 tracking-tight">
-                    Current Ghana Time & National Calendar
+                    Ghana Time, Global Clocks & National Calendar
                 </h2>
                 <p class="text-forest-800/80 text-base">
-                    Real-time GMT clock synchronized with Ghana public holidays and official schedule tracking.
+                    Real-time GMT clock synchronized with Ghana public holidays and major international timezones.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 
-                <!-- Live Clock Card (Left) -->
+                <!-- Live Clock Card (Left) - Enhanced with Nigeria, UK, Canada, South Africa -->
                 <div class="lg:col-span-5 bg-forest-900 text-cream p-8 rounded-3xl shadow-xl border border-forest-800 space-y-6">
                     <div class="flex items-center justify-between pb-4 border-b border-forest-800">
                         <div class="flex items-center gap-3">
@@ -478,19 +478,40 @@
                         <span class="bg-lime/20 text-lime px-3 py-1 rounded-full text-xs font-bold animate-pulse">Live</span>
                     </div>
 
-                    <div class="text-center py-6 space-y-2">
-                        <div id="live-ghana-time" class="text-4xl sm:text-5xl font-black tracking-tight text-lime font-mono">00:00:00 AM</div>
-                        <div id="live-ghana-date" class="text-sm sm:text-base font-semibold text-cream-200">Loading date...</div>
+                    <!-- Main Ghana Clock & Date Box -->
+                    <div class="text-center py-5 space-y-1 bg-forest-800/60 rounded-2xl border border-forest-700 p-4">
+                        <div id="live-ghana-time" class="text-3xl sm:text-4xl font-black tracking-tight text-lime font-mono">00:00:00 AM</div>
+                        <div id="live-ghana-date" class="text-xs sm:text-sm font-semibold text-cream-200">Loading date...</div>
                     </div>
 
-                    <div class="bg-forest-800 p-4 rounded-2xl border border-forest-700 space-y-2">
-                        <div class="flex justify-between text-xs font-medium text-cream-300">
-                            <span>Timezone:</span>
-                            <span class="text-cream font-bold">Greenwich Mean Time (GMT)</span>
+                    <!-- International World Clocks (Matched to Ghana Box Width) -->
+                    <div class="space-y-3 pt-2">
+                        <div class="text-xs font-bold uppercase tracking-wider text-lime flex items-center gap-2">
+                            <i class="fa-solid fa-globe"></i> International Timezones
                         </div>
-                        <div class="flex justify-between text-xs font-medium text-cream-300">
-                            <span>Daylight Saving:</span>
-                            <span class="text-cream font-bold">No DST (Constant Year-Round)</span>
+                        
+                        <!-- Nigeria -->
+                        <div class="bg-forest-800 p-3 rounded-xl border border-forest-700 flex justify-between items-center text-xs sm:text-sm">
+                            <span class="font-medium text-cream-300"><i class="fa-solid fa-earth-africa text-lime mr-1.5"></i> Nigeria (WAT)</span>
+                            <span id="time-nigeria" class="font-mono font-bold text-lime">--:--:--</span>
+                        </div>
+                        
+                        <!-- United Kingdom -->
+                        <div class="bg-forest-800 p-3 rounded-xl border border-forest-700 flex justify-between items-center text-xs sm:text-sm">
+                            <span class="font-medium text-cream-300"><i class="fa-solid fa-earth-europe text-lime mr-1.5"></i> United Kingdom (GMT/BST)</span>
+                            <span id="time-uk" class="font-mono font-bold text-lime">--:--:--</span>
+                        </div>
+
+                        <!-- Canada (Eastern - Toronto) -->
+                        <div class="bg-forest-800 p-3 rounded-xl border border-forest-700 flex justify-between items-center text-xs sm:text-sm">
+                            <span class="font-medium text-cream-300"><i class="fa-solid fa-earth-americas text-lime mr-1.5"></i> Canada (ET)</span>
+                            <span id="time-canada" class="font-mono font-bold text-lime">--:--:--</span>
+                        </div>
+
+                        <!-- South Africa -->
+                        <div class="bg-forest-800 p-3 rounded-xl border border-forest-700 flex justify-between items-center text-xs sm:text-sm">
+                            <span class="font-medium text-cream-300"><i class="fa-solid fa-earth-africa text-lime mr-1.5"></i> South Africa (SAST)</span>
+                            <span id="time-sa" class="font-mono font-bold text-lime">--:--:--</span>
                         </div>
                     </div>
                 </div>
@@ -554,7 +575,7 @@
         </div>
     </section>
 
-    <!-- Ecosystem Advantage Section -->
+    <!-- Ecosystem Advantage Section (With Number of Customers, Companies Worked With & 10+ Years) -->
     <section id="ecosystem" class="py-20 bg-forest-900 text-cream relative z-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -573,104 +594,78 @@
                     </ul>
                 </div>
 
-                <!-- Neumorphic Clean Metrics Card -->
+                <!-- Brand Milestones & Statistics Card -->
                 <div class="lg:col-span-7 bg-[#092621]/80 backdrop-blur-xl p-6 sm:p-8 rounded-[36px] border border-forest-700/60 shadow-[0_20px_50px_rgba(0,0,0,0.5)] space-y-6 text-forest-900">
                     
                     <!-- Top Widget Header -->
                     <div class="bg-cream p-5 rounded-2xl shadow-sm flex items-center justify-between">
                         <div class="flex items-center gap-3">
-                            <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-500 text-white flex items-center justify-center text-xl shadow-md">
-                                <i class="fa-solid fa-users"></i>
+                            <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-lime to-emerald-600 text-forest-900 flex items-center justify-center text-xl shadow-md font-black">
+                                <i class="fa-solid fa-award"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-forest-900 text-base">Live Visitors & Traffic</h4>
-                                <p class="text-xs text-forest-700">Real-time site visitor tracker</p>
+                                <h4 class="font-bold text-forest-900 text-base">DPM Brand Milestones</h4>
+                                <p class="text-xs text-forest-700">Decade of trusted service delivery</p>
                             </div>
                         </div>
-                        <div class="flex items-center gap-1.5 bg-forest-900/5 p-1 rounded-xl">
-                            <button type="button" class="px-3 py-1.5 text-xs font-semibold rounded-lg text-forest-700 hover:bg-white transition">7d</button>
-                            <button type="button" class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow">Live</button>
-                            <button type="button" class="px-3 py-1.5 text-xs font-semibold rounded-lg text-forest-700 hover:bg-white transition">30d</button>
-                        </div>
+                        <span class="bg-lime/20 text-forest-900 px-3 py-1 rounded-full text-xs font-bold border border-lime">Verified Stats</span>
                     </div>
 
-                    <!-- Main Stats Display -->
+                    <!-- Milestone 1: Years in Operation -->
                     <div class="bg-cream p-6 rounded-2xl shadow-sm flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                         <div>
-                            <div id="live-visitor-count" class="text-3xl sm:text-4xl font-black text-forest-900 tracking-tight">1,450</div>
-                            <div class="flex items-center gap-1.5 text-xs font-bold text-emerald-600 mt-1">
-                                <i class="fa-solid fa-signal animate-pulse"></i>
-                                <span id="live-status-text">Live visitors online now</span>
+                            <div class="text-3xl sm:text-4xl font-black text-forest-900 tracking-tight">10+ Years</div>
+                            <div class="flex items-center gap-1.5 text-xs font-bold text-emerald-700 mt-1">
+                                <i class="fa-solid fa-check-circle"></i>
+                                <span>Continuous operational excellence since inception</span>
                             </div>
                         </div>
                         <div class="bg-emerald-50 border border-emerald-200 px-4 py-2.5 rounded-2xl flex items-center gap-2">
                             <div class="w-8 h-8 rounded-xl bg-emerald-500 text-white flex items-center justify-center text-xs">
-                                <i class="fa-solid fa-chart-line"></i>
+                                <i class="fa-solid fa-calendar-days"></i>
                             </div>
                             <div>
-                                <span id="live-growth-rate" class="text-xs font-bold text-emerald-700 block">+12.5%</span>
-                                <span class="text-[10px] text-forest-700 font-medium">Active traffic rate</span>
+                                <span class="text-xs font-bold text-emerald-800 block">Established</span>
+                                <span class="text-[10px] text-forest-700 font-medium">Multi-Industry Group</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Simulated Wave Graph Box -->
-                    <div class="bg-cream p-5 rounded-2xl shadow-sm relative overflow-hidden">
-                        <div class="flex justify-between items-center mb-3 text-xs font-semibold text-forest-700">
-                            <span>Start</span>
-                            <span>Mid-Cycle</span>
-                            <span id="graph-peak-label" class="text-blue-600 font-bold bg-blue-50 px-2.5 py-1 rounded-lg border border-blue-200">Current: 1,450</span>
-                        </div>
-                        <!-- SVG Gradient Wave Graphic -->
-                        <div class="w-full h-28 relative">
-                            <svg viewBox="0 0 500 120" class="w-full h-full overflow-visible">
-                                <defs>
-                                    <linearGradient id="grad" x1="0%" y1="0%" x2="0%" y2="100%">
-                                        <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.4"/>
-                                        <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.0"/>
-                                    </linearGradient>
-                                </defs>
-                                <path d="M0,90 Q60,40 120,70 T240,50 T360,30 T480,15 L480,120 L0,120 Z" fill="url(#grad)" />
-                                <path d="M0,90 Q60,40 120,70 T240,50 T360,30 T480,15" fill="none" stroke="#3b82f6" stroke-width="3.5" stroke-linecap="round"/>
-                                <!-- Highlight Node -->
-                                <circle cx="360" cy="30" r="5" fill="#ffffff" stroke="#3b82f6" stroke-width="3"/>
-                            </svg>
-                        </div>
-                    </div>
-
-                    <!-- Dual Bottom Cards -->
+                    <!-- Dual Milestone Cards: Number of Customers & Companies Worked With -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div class="bg-cream p-4 rounded-2xl shadow-sm flex items-center justify-between">
+                        <!-- Customers -->
+                        <div class="bg-cream p-5 rounded-2xl shadow-sm flex items-center justify-between">
                             <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-xl bg-purple-600 text-white flex items-center justify-center text-sm shadow">
-                                    <i class="fa-solid fa-user-plus"></i>
+                                <div class="w-11 h-11 rounded-xl bg-forest-900 text-lime flex items-center justify-center text-base shadow font-bold">
+                                    <i class="fa-solid fa-users"></i>
                                 </div>
                                 <div>
-                                    <span class="text-[11px] font-bold text-forest-700 uppercase tracking-wide">New Sessions</span>
-                                    <div id="live-new-sessions" class="text-lg font-black text-forest-900">980</div>
+                                    <span class="text-[11px] font-bold text-forest-700 uppercase tracking-wide">Total Customers</span>
+                                    <div class="text-xl font-black text-forest-900">5,000+</div>
                                 </div>
                             </div>
-                            <span class="text-xs font-bold text-emerald-600 flex items-center gap-1"><i class="fa-solid fa-arrow-up text-[10px]"></i>14.2%</span>
+                            <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-lg">Active</span>
                         </div>
 
-                        <div class="bg-cream p-4 rounded-2xl shadow-sm flex items-center justify-between">
+                        <!-- Companies Worked With -->
+                        <div class="bg-cream p-5 rounded-2xl shadow-sm flex items-center justify-between">
                             <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-xl bg-emerald-500 text-white flex items-center justify-center text-sm shadow">
-                                    <i class="fa-solid fa-shield-halved"></i>
+                                <div class="w-11 h-11 rounded-xl bg-forest-900 text-lime flex items-center justify-center text-base shadow font-bold">
+                                    <i class="fa-solid fa-handshake"></i>
                                 </div>
                                 <div>
-                                    <span class="text-[11px] font-bold text-forest-700 uppercase tracking-wide">Retention Rate</span>
-                                    <div class="text-lg font-black text-forest-900">95.2%</div>
+                                    <span class="text-[11px] font-bold text-forest-700 uppercase tracking-wide">Partner Companies</span>
+                                    <div class="text-xl font-black text-forest-900">120+</div>
                                 </div>
                             </div>
-                            <span class="text-xs font-bold text-emerald-600 flex items-center gap-1"><i class="fa-solid fa-arrow-up text-[10px]"></i>2.8%</span>
+                            <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-lg">Trusted</span>
                         </div>
                     </div>
 
                     <!-- Bottom Action Pill -->
-                    <a href="#divisions" class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-3.5 px-6 rounded-2xl transition shadow-lg flex items-center justify-center gap-3 text-sm cursor-pointer">
-                        <span>View Ecosystem Details</span>
-                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    <a href="#divisions" class="w-full bg-forest-700 hover:bg-forest-800 text-cream font-bold py-3.5 px-6 rounded-2xl transition shadow-lg flex items-center justify-center gap-3 text-sm cursor-pointer">
+                        <span>Explore All Divisions</span>
+                        <i class="fa-solid fa-arrow-right text-xs text-lime"></i>
                     </a>
 
                 </div>
@@ -838,7 +833,7 @@
                     <ul class="space-y-2.5 text-sm text-cream-200">
                         <li><a href="#ecosystem" class="hover:text-lime transition">Our Operations</a></li>
                         <li><a href="#divisions" class="hover:text-lime transition">Ecosystem</a></li>
-                        <li><a href="#calendar-section" class="hover:text-lime transition">Ghana Time & Calendar</a></li>
+                        <li><a href="#calendar-section" class="hover:text-lime transition">Global Time & Calendar</a></li>
                         <li><a href="#contact" class="hover:text-lime transition">Contact Headquarters</a></li>
                         <li><a href="#about" class="hover:text-lime transition">About Us</a></li>
                     </ul>
@@ -979,7 +974,7 @@
             }, 4000);
         });
 
-        // Ghana Live Time & Interactive Calendar Logic
+        // Ghana & Global Live Clocks Logic
         const ghanaHolidays2026 = {
             "2026-01-01": "New Year's Day",
             "2026-01-07": "Constitution Day",
@@ -997,21 +992,31 @@
 
         let currentCalendarDate = new Date(); // Starts at current date
 
-        function updateGhanaLiveClock() {
+        function updateGlobalLiveClocks() {
             const now = new Date();
-            // Options for Ghana Time (GMT / UTC+0)
+            
+            // Ghana Time (GMT / UTC+0)
             const optionsTime = { timeZone: 'Africa/Accra', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
             const optionsDate = { timeZone: 'Africa/Accra', weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
-            const timeString = new Intl.DateTimeFormat('en-US', optionsTime).format(now);
-            const dateString = new Intl.DateTimeFormat('en-US', optionsDate).format(now);
+            document.getElementById('live-ghana-time').textContent = new Intl.DateTimeFormat('en-US', optionsTime).format(now);
+            document.getElementById('live-ghana-date').textContent = new Intl.DateTimeFormat('en-US', optionsDate).format(now);
 
-            document.getElementById('live-ghana-time').textContent = timeString;
-            document.getElementById('live-ghana-date').textContent = dateString;
+            // Nigeria (WAT - UTC+1)
+            document.getElementById('time-nigeria').textContent = new Intl.DateTimeFormat('en-US', { timeZone: 'Africa/Lagos', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true }).format(now);
+
+            // United Kingdom (GMT/BST)
+            document.getElementById('time-uk').textContent = new Intl.DateTimeFormat('en-US', { timeZone: 'Europe/London', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true }).format(now);
+
+            // Canada (Eastern - Toronto)
+            document.getElementById('time-canada').textContent = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Toronto', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true }).format(now);
+
+            // South Africa (SAST - UTC+2)
+            document.getElementById('time-sa').textContent = new Intl.DateTimeFormat('en-US', { timeZone: 'Africa/Johannesburg', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true }).format(now);
         }
 
-        setInterval(updateGhanaLiveClock, 1000);
-        updateGhanaLiveClock();
+        setInterval(updateGlobalLiveClocks, 1000);
+        updateGlobalLiveClocks();
 
         function renderInteractiveCalendar(date) {
             const year = date.getFullYear();
@@ -1080,33 +1085,6 @@
         });
 
         renderInteractiveCalendar(currentCalendarDate);
-
-        // Live Visitor Counter & Real-Time Tracking Integration
-        document.addEventListener("DOMContentLoaded", () => {
-            const visitorCounterEl = document.getElementById("live-visitor-count");
-            const newSessionsEl = document.getElementById("live-new-sessions");
-            const peakLabelEl = document.getElementById("graph-peak-label");
-
-            let baseVisitors = parseInt(localStorage.getItem("dpm_live_visitors")) || 1450;
-            let baseSessions = parseInt(localStorage.getItem("dpm_live_sessions")) || 980;
-
-            baseVisitors += 1;
-            baseSessions += 1;
-
-            localStorage.setItem("dpm_live_visitors", baseVisitors);
-            localStorage.setItem("dpm_live_sessions", baseSessions);
-
-            visitorCounterEl.textContent = baseVisitors.toLocaleString();
-            newSessionsEl.textContent = baseSessions.toLocaleString();
-            peakLabelEl.textContent = `Current: ${baseVisitors.toLocaleString()}`;
-
-            setInterval(() => {
-                baseVisitors += Math.floor(Math.random() * 3) + 1;
-                localStorage.setItem("dpm_live_visitors", baseVisitors);
-                visitorCounterEl.textContent = baseVisitors.toLocaleString();
-                peakLabelEl.textContent = `Current: ${baseVisitors.toLocaleString()}`;
-            }, 30000);
-        });
 
         // Modal Logic for Privacy Policy & Terms of Service
         const privacyModal = document.getElementById('privacy-modal');
